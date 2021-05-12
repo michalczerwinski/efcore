@@ -116,7 +116,7 @@ namespace Microsoft.EntityFrameworkCore.Query
         {
             return AssertQuery(
                 async,
-                ss => ss.Set<Weapon>().Select(w => w.IsAutomatic.ToString()));
+                ss => ss.Set<Weapon>().Where(w => w.IsAutomatic.ToString() == $"A{w.Id}B"));
         }
 
         [ConditionalTheory]
